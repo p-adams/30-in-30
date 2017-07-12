@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+
+  <script>
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team1 = players.slice()
+    const team2 = [].concat(players)
+    const team3 = [...players]
+    const team4 = Array.from(players)
+    const person = {
+        name: 'foo',
+        age: 55
+    }
+    const op = Object.assign({}, person)
+    const makeYounger = obj => obj.age = 25
+    makeYounger(op)
+    console.log(op, person)
+    const someoneElse = {
+        name: 'bar',
+        age: 20,
+        ids: {
+            bank: '1112233ffh',
+            license: 'OU812'
+        }
+    }
+    const newGuy = {...someoneElse}
+    console.log(newGuy)
+
+  </script>
+
+</body>
+</html>
